@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>magnetic-btn</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper">
+        <div
+          class="btn btn-round is-inview"
+          data-scroll=""
+          data-scroll-speed="-1"
+          data-scroll-direction="horizontal"
+          data-scroll-position="bottom"
+          data-scroll-offset="-50%, 0"
+          style="
+            transform: matrix3d(
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              -21.8,
+              0,
+              0,
+              1
+            );
+          "
+        >
+          <a
+            href="https://dennissnellenberg.com/contact"
+            class="btn-click magnetic"
+            data-strength="100"
+            data-strength-text="50"
+            style="transform: rotate(0.001deg)"
+          >
+            <div class="btn-fill" style="transform: translate(0px, -76%)"></div>
+            <span class="btn-text" style="transform: rotate(0.001deg)">
+              <span class="btn-text-inner">Get in touch</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="btn btn-normal">
+          <a
+            href="tel:+31627847430"
+            class="btn-click magnetic"
+            data-strength="25"
+            data-strength-text="15"
+            style="transform: rotate(0.001deg)"
+          >
+            <div class="btn-fill" style="transform: translate(0px, -76%)"></div>
+            <span class="btn-text" style="transform: rotate(0.001deg)">
+              <span class="btn-text-inner change">+31 6 27 84 74 30</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
