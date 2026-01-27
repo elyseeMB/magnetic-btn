@@ -2,8 +2,6 @@
 
 Ce projet implémente un bouton interactif haut de gamme inspiré des standards du web créatif (type Awwwards). Il combine un **suivi magnétique**, un **rebond physique (spring physics)** et un **effet de remplissage liquide**.
 
----
-
 ## Concepts de Physique & Mathématiques
 
 Pour créer un mouvement qui ne semble pas "robotique", ce code repose sur des principes physiques réels.
@@ -12,21 +10,17 @@ Pour créer un mouvement qui ne semble pas "robotique", ce code repose sur des p
 
 Plutôt que d'utiliser une animation linéaire, nous simulons un ressort qui ramène le bouton au centre.
 
-- **La Loi de Hooke ()** : L'accélération () est proportionnelle à la distance entre l'objet et son point d'ancrage (le centre ). Plus le bouton est loin du centre, plus la force qui le tire est grande.
+- **La Loi de Hooke** : L'accélération est proportionnelle à la distance entre l'objet et son point d'ancrage (le centre). Plus le bouton est loin du centre, plus la force qui le tire est grande.
 - **Stiffness** : La "rigidité" du ressort. Plus elle est élevée, plus le retour est nerveux.
-
 - **L'Amortissement (Damping)** : Pour éviter que le bouton ne rebondisse à l'infini, on simule une friction. À chaque image, on réduit la vitesse de l'objet.
-- **Équation** : (où est compris entre et ).
 
 ### 2. Normalisation des Coordonnées
 
 Le calcul de la position ne se fait pas en pixels bruts, mais en **valeurs relatives** pour s'adapter à toutes les tailles de boutons :
 
-1. On calcule la distance entre la souris et le centre du bouton ().
-2. On divise par la moitié de la largeur du bouton pour obtenir un ratio entre **-1** et **1**.
-3. On multiplie ce ratio par la `strength` (l'amplitude en pixels) définie dans le HTML.
-
----
+1. On calcule la distance entre la souris et le centre du bouton
+2. On divise par la moitié de la largeur du bouton pour obtenir un ratio entre **-1** et **1**
+3. On multiplie ce ratio par la `strength` (l'amplitude en pixels) définie dans le HTML
 
 ## Astuces de Code & Optimisations
 
@@ -46,8 +40,6 @@ Lorsque l'on quitte le bouton, une transition CSS est souvent encore en cours. S
 
 L'utilisation de `translate3d(x, y, 0)` au lieu de `top/left` ou `translate(x, y)` force le navigateur à utiliser la carte graphique (GPU). Combiné à `will-change: transform`, cela garantit un rendu à 60fps sans saccades.
 
----
-
 ## Configuration (Customization)
 
 Tu peux varier l'effet directement dans ton objet `config` ou via le HTML :
@@ -58,8 +50,6 @@ Tu peux varier l'effet directement dans ton objet `config` ou via le HTML :
 | `damping`            | Vitesse de l'arrêt du rebond                      | `0.80` (sec) à `0.95` (long)     |
 | `data-strength`      | Amplitude du mouvement du bouton                  | `20` à `100`                     |
 | `data-strength-text` | Amplitude du mouvement du texte (effet parallaxe) | `strength / 2`                   |
-
----
 
 ## Structure HTML recommandée
 
