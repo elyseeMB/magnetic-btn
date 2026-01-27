@@ -119,13 +119,13 @@ class Magnetic {
     this.currentY = y * this.strength;
 
     this.item.style.transition =
-      "transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)";
+      "transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)";
     this.item.style.transform = `translate3d(${this.currentX}px, ${this.currentY}px, 0px)`;
 
     if (this.innerText) {
       const ratio = this.strengthText / this.strength;
       this.innerText.style.transition =
-        "transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)";
+        "transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)";
       this.innerText.style.transform = `translate3d(${this.currentX * ratio}px, ${this.currentY * ratio}px, 0px)`;
     }
   };
